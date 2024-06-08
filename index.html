@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div
+      class="flex flex-col text-white justify-around min-w-[24rem] max-w-[25rem] min-h-[42rem] max-h-[100vh] mx-auto my-auto"
+    >
+      <h1 class="mx-auto heading-5 mb-4 tracking-wide">Calculator</h1>
+      <h2 class="mx-auto mb-4 tracking-wide">Calculator</h2>
+      <h5 class="mx-auto mb-4 tracking-wide">Calculator</h5>
+      <div class="flex h-[6rem]">
+        <input
+          type="text"
+          id="inputVal"
+          value="0"
+          class="h-full w-full outline-0 text-right text-black mx-1 px-4"
+          readonly
+        />
+      </div>
+      <div class="flex justify-around">
+        <button
+          onclick="clearDisplay('AC')"
+          class="border border-1 border-red-500 rounded min-w-[5rem] min-h-[5rem] w-[5.8rem] h-[5.8rem] max-w-[6rem] max-h[6rem] hover:scale-95 transition duration-150 ease-in-out"
+        >
+          AC
+        </button>
+        <button
+          onclick="appendToDisplay('+/-')"
+          class="border border-1 border-green-500 rounded min-w-[5rem] min-h-[5rem] w-[5.8rem] h-[5.8rem] max-w-[6rem] max-h[6rem] hover:scale-95 transition duration-150 ease-in-out"
+        >
+          +/-
+        </button>
+        <button
+          onclick="appendToDisplay('%')"
+          class="border border-1 rounded border-green-500 min-w-[5rem] min-h-[5rem] w-[5.8rem] h-[5.8rem] max-w-[6rem] max-h[6rem] hover:scale-95 transition duration-150 ease-in-out"
+        >
+          %
+        </button>
+        <button
+          onclick="appendToDisplay('/')"
+          class="border border-1 rounded border-green-500 min-w-[5rem] min-h-[5rem] w-[5.8rem] h-[5.8rem] max-w-[6rem] max-h[6rem] hover:scale-95 transition duration-150 ease-in-out"
+        >
+          /
+        </button>
+      </div>
+      <div class="flex justify-around">
+        <button
+          onclick="appendToDisplay(7)"
+          class="border border-1 rounded min-w-[5rem] min-h-[5rem] w-[5.8rem] h-[5.8rem] max-w-[6rem] max-h[6rem] hover:scale-95 transition duration-150 ease-in-out"
+        >
+          7
+        </button>
+        <button
+          onclick="appendToDisplay(8)"
+          class="border border-1 rounded min-w-[5rem] min-h-[5rem] w-[5.8rem] h-[5.8rem] max-w-[6rem] max-h[6rem] hover:scale-95 transition duration-150 ease-in-out"
+        >
+          8
+        </button>
+        <button
+          onclick="appendToDisplay(9)"
+          class="border border-1 rounded min-w-[5rem] min-h-[5rem] w-[5.8rem] h-[5.8rem] max-w-[6rem] max-h[6rem] hover:scale-95 transition duration-150 ease-in-out"
+        >
+          9
+        </button>
+        <button
+          onclick="appendToDisplay('x')"
+          class="border border-1 rounded border-green-500 min-w-[5rem] min-h-[5rem] w-[5.8rem] h-[5.8rem] max-w-[6rem] max-h[6rem] hover:scale-95 transition duration-150 ease-in-out"
+        >
+          x
+        </button>
+      </div>
+      <div class="flex justify-around">
+        <button
+          onclick="appendToDisplay(4)"
+          class="border border-1 rounded min-w-[5rem] min-h-[5rem] w-[5.8rem] h-[5.8rem] max-w-[6rem] max-h[6rem] hover:scale-95 transition duration-150 ease-in-out"
+        >
+          4
+        </button>
+        <button
+          onclick="appendToDisplay(5)"
+          class="border border-1 rounded min-w-[5rem] min-h-[5rem] w-[5.8rem] h-[5.8rem] max-w-[6rem] max-h[6rem] hover:scale-95 transition duration-150 ease-in-out"
+        >
+          5
+        </button>
+        <button
+          onclick="appendToDisplay(6)"
+          class="border border-1 rounded min-w-[5rem] min-h-[5rem] w-[5.8rem] h-[5.8rem] max-w-[6rem] max-h[6rem] hover:scale-95 transition duration-150 ease-in-out"
+        >
+          6
+        </button>
+        <button
+          onclick="appendToDisplay('-')"
+          class="border border-1 rounded border-green-500 min-w-[5rem] min-h-[5rem] w-[5.8rem] h-[5.8rem] max-w-[6rem] max-h[6rem] hover:scale-95 transition duration-150 ease-in-out"
+        >
+          -
+        </button>
+      </div>
+      <div class="flex justify-around">
+        <button
+          onclick="appendToDisplay(1)"
+          class="border border-1 rounded min-w-[5rem] min-h-[5rem] w-[5.8rem] h-[5.8rem] max-w-[6rem] max-h[6rem] hover:scale-95 transition duration-150 ease-in-out"
+        >
+          1
+        </button>
+        <button
+          onclick="appendToDisplay(2)"
+          class="border border-1 rounded min-w-[5rem] min-h-[5rem] w-[5.8rem] h-[5.8rem] max-w-[6rem] max-h[6rem] hover:scale-95 transition duration-150 ease-in-out"
+        >
+          2
+        </button>
+        <button
+          onclick="appendToDisplay(3)"
+          class="border border-1 rounded min-w-[5rem] min-h-[5rem] w-[5.8rem] h-[5.8rem] max-w-[6rem] max-h[6rem] hover:scale-95 transition duration-150 ease-in-out"
+        >
+          3
+        </button>
+        <button
+          onclick="appendToDisplay('+')"
+          class="border border-1 rounded border-green-500 min-w-[5rem] min-h-[5rem] w-[5.8rem] h-[5.8rem] max-w-[6rem] max-h[6rem] hover:scale-95 transition duration-150 ease-in-out"
+        >
+          +
+        </button>
+      </div>
+      <div class="flex justify-around">
+        <div class="flex grow max-w-[12rem]">
+          <button
+            onclick="appendToDisplay(0)"
+            class="border border-1 grow rounded min-w-[5rem] min-h-[5rem] w-[5.8rem] h-[5.8rem] max-w-[12rem] max-h[6rem] hover:scale-95 transition duration-150 ease-in-out"
+          >
+            0
+          </button>
+        </div>
+        <button
+          onclick="appendToDisplay(',')"
+          class="border border-1 rounded min-w-[5rem] min-h-[5rem] w-[5.8rem] h-[5.8rem] max-w-[6rem] max-h[6rem] hover:scale-95 transition duration-150 ease-in-out"
+        >
+          ,
+        </button>
+        <button
+          onclick="calculate()"
+          class="border border-1 rounded border-orange-500 min-w-[5rem] min-h-[5rem] w-[5.8rem] h-[5.8rem] max-w-[6rem] max-h[6rem] hover:scale-95 transition duration-150 ease-in-out"
+        >
+          =
+        </button>
+      </div>
+    </div>
+    <script src="./app.js"></script>
+  </body>
+</html>
