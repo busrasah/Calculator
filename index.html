@@ -11,9 +11,7 @@
     <div
       class="flex flex-col text-white justify-around min-w-[24rem] max-w-[25rem] min-h-[42rem] max-h-[100vh] mx-auto my-auto"
     >
-      <h1 class="mx-auto heading-5 mb-4 tracking-wide">Calculator</h1>
-      <h2 class="mx-auto mb-4 tracking-wide">Calculator</h2>
-      <h5 class="mx-auto mb-4 tracking-wide">Calculator</h5>
+      <h1 class="mx-auto text-3xl mb-4 tracking-wide">Calculator</h1>
       <div class="flex h-[6rem]">
         <input
           type="text"
@@ -31,19 +29,19 @@
           AC
         </button>
         <button
-          onclick="appendToDisplay('+/-')"
+          onclick="reverse()"
           class="border border-1 border-green-500 rounded min-w-[5rem] min-h-[5rem] w-[5.8rem] h-[5.8rem] max-w-[6rem] max-h[6rem] hover:scale-95 transition duration-150 ease-in-out"
         >
           +/-
         </button>
         <button
-          onclick="appendToDisplay('%')"
+          onclick="percent()"
           class="border border-1 rounded border-green-500 min-w-[5rem] min-h-[5rem] w-[5.8rem] h-[5.8rem] max-w-[6rem] max-h[6rem] hover:scale-95 transition duration-150 ease-in-out"
         >
           %
         </button>
         <button
-          onclick="appendToDisplay('/')"
+          onclick="sign('/')"
           class="border border-1 rounded border-green-500 min-w-[5rem] min-h-[5rem] w-[5.8rem] h-[5.8rem] max-w-[6rem] max-h[6rem] hover:scale-95 transition duration-150 ease-in-out"
         >
           /
@@ -69,7 +67,7 @@
           9
         </button>
         <button
-          onclick="appendToDisplay('x')"
+          onclick="sign('*')"
           class="border border-1 rounded border-green-500 min-w-[5rem] min-h-[5rem] w-[5.8rem] h-[5.8rem] max-w-[6rem] max-h[6rem] hover:scale-95 transition duration-150 ease-in-out"
         >
           x
@@ -95,7 +93,7 @@
           6
         </button>
         <button
-          onclick="appendToDisplay('-')"
+          onclick="sign('-')"
           class="border border-1 rounded border-green-500 min-w-[5rem] min-h-[5rem] w-[5.8rem] h-[5.8rem] max-w-[6rem] max-h[6rem] hover:scale-95 transition duration-150 ease-in-out"
         >
           -
@@ -121,7 +119,7 @@
           3
         </button>
         <button
-          onclick="appendToDisplay('+')"
+          onclick="sign('+')"
           class="border border-1 rounded border-green-500 min-w-[5rem] min-h-[5rem] w-[5.8rem] h-[5.8rem] max-w-[6rem] max-h[6rem] hover:scale-95 transition duration-150 ease-in-out"
         >
           +

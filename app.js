@@ -1,5 +1,6 @@
-var sonuc = 0;
-var deger = "0";
+var result = 0;
+var transaction = "";
+var variable = "";
 
 const inputVal = document.getElementById("inputVal");
 
@@ -11,46 +12,67 @@ function appendToDisplay(input) {
   }
 }
 
-function clearDisplay() {
-  inputVal.value = " ";
-}
-
 function calculate() {
-  try {
-    inputVal.value = eval(inputVal.value);
-  } catch (error) {
-    inputVal.value = "error";
+  if (variable == "+") {
+    sum();
+  } else if (variable == "-") {
+    subtract();
+  } else if (variable == "/") {
+    divide();
+  } else {
+    multiply();
   }
 }
 
-const topla = () => {
-  sonuc = sonuc + Number(deger);
+function clearDisplay() {
+  inputVal.value = "0";
+  result = 0;
+}
+
+const sum = () => {
+  result = result + Number(inputVal.value);
+  inputVal.value = result;
 };
 
-const cikar = () => {
-  sonuc = sonuc - Number(deger);
+const subtract = () => {
+  result = result - Number(inputVal.value);
+
+  inputVal.value = result;
 };
 
-const bol = () => {
-  if (Number(deger) == 0 || (sonuc == 0 && Number(deger) == 0)) {
+const divide = () => {
+  if (
+    Number(inputVal.value) == 0 ||
+    (result == 0 && Number(inputVal.value) == 0)
+  ) {
     console.log("HATA");
-    sonuc = null;
+    result = null;
   }
 
-  sonuc = sonuc / Number(deger);
+  result = result / Number(inputVal.value);
+  inputVal.value = result;
 };
 
-const carp = () => {
-  sonuc = sonuc == 0 || Number(deger) == 0 ? 0 : sonuc * Number(deger);
+const multiply = () => {
+  result =
+    result == 0 || Number(inputVal.value) == 0
+      ? 0
+      : result * Number(inputVal.value);
+  inputVal.value = result;
+  console.log("3 -" + inputVal.value);
+  console.log("4 -" + result);
 };
 
-const yuzde = () => {
-  sonuc = sonuc / 100;
+const percent = () => {
+  result = result / 100;
+  inputVal.value = result;
 };
-const ters = () => {
-  sonuc = sonuc * -1;
+const reverse = () => {
+  result = result * -1;
+  inputVal.value = result;
 };
-
-const changedeger = (value) => {
-  deger = deger + value;
+const sign = (i) => {
+  variable = i;
+  result = Number(inputVal.value);
+  inputVal.value = "";
 };
